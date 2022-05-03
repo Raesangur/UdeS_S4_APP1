@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<GenRun Id="synth_1" LaunchPart="xc7z010clg400-1" LaunchTime="1651603341" LaunchIncrCheckpoint="$PSRCDIR/utils_1/imports/synth_1/half_adder.dcp">
+  <File Type="VDS-TIMING-PB" Name="circuit_compteur_timing_summary_synth.pb"/>
+  <File Type="VDS-TIMINGSUMMARY" Name="circuit_compteur_timing_summary_synth.rpt"/>
+  <File Type="RDS-DCP" Name="circuit_compteur.dcp"/>
+  <File Type="RDS-UTIL-PB" Name="circuit_compteur_utilization_synth.pb"/>
+  <File Type="RDS-UTIL" Name="circuit_compteur_utilization_synth.rpt"/>
+  <File Type="RDS-PROPCONSTRS" Name="circuit_compteur_drc_synth.rpt"/>
+  <File Type="RDS-RDS" Name="circuit_compteur.vds"/>
+  <File Type="REPORTS-TCL" Name="circuit_compteur_reports.tcl"/>
+  <File Type="PA-TCL" Name="circuit_compteur.tcl"/>
+  <FileSet Name="sources" Type="DesignSrcs" RelSrcDir="$PSRCDIR/sources_1" RelGenDir="$PGENDIR/sources_1">
+    <Filter Type="Srcs"/>
+    <File Path="$PSRCDIR/sources_1/imports/Atelier/clkdiv_module.vhd">
+      <FileInfo>
+        <Attr Name="ImportPath" Val="$PPRDIR/../clkdiv_module.vhd"/>
+        <Attr Name="ImportTime" Val="1635536310"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/imports/Atelier/compteur_simple.vhd">
+      <FileInfo>
+        <Attr Name="ImportPath" Val="$PPRDIR/../compteur_simple.vhd"/>
+        <Attr Name="ImportTime" Val="1635536310"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/imports/Atelier/circuit_2.vhd">
+      <FileInfo>
+        <Attr Name="ImportPath" Val="$PPRDIR/../circuit_2.vhd"/>
+        <Attr Name="ImportTime" Val="1635536310"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/new/circuit_1.vhd">
+      <FileInfo>
+        <Attr Name="AutoDisabled" Val="1"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <Config>
+      <Option Name="DesignMode" Val="RTL"/>
+      <Option Name="TopModule" Val="circuit_compteur"/>
+      <Option Name="TopAutoSet" Val="TRUE"/>
+    </Config>
+  </FileSet>
+  <FileSet Name="constrs_in" Type="Constrs" RelSrcDir="$PSRCDIR/constrs_1">
+    <Filter Type="Constrs"/>
+    <File Path="$PSRCDIR/constrs_1/imports/Atelier/Zybo-Z7-Master.xdc">
+      <FileInfo>
+        <Attr Name="UserDisabled" Val="1"/>
+        <Attr Name="ImportPath" Val="$PPRDIR/../Zybo-Z7-Master.xdc"/>
+        <Attr Name="ImportTime" Val="1635536310"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/constrs_1/imports/Atelier/circuit_1.xdc">
+      <FileInfo>
+        <Attr Name="UserDisabled" Val="1"/>
+        <Attr Name="ImportPath" Val="$PPRDIR/../circuit_1.xdc"/>
+        <Attr Name="ImportTime" Val="1641411922"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/constrs_1/imports/Atelier/circuit_2.xdc">
+      <FileInfo>
+        <Attr Name="ImportPath" Val="$PPRDIR/../circuit_2.xdc"/>
+        <Attr Name="ImportTime" Val="1641411976"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+      </FileInfo>
+    </File>
+    <Config>
+      <Option Name="ConstrsType" Val="XDC"/>
+    </Config>
+  </FileSet>
+  <FileSet Name="utils" Type="Utils" RelSrcDir="$PSRCDIR/utils_1">
+    <Filter Type="Utils"/>
+    <File Path="$PSRCDIR/utils_1/imports/synth_1/half_adder.dcp">
+      <FileInfo>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedInSteps" Val="synth_1"/>
+        <Attr Name="AutoDcp" Val="1"/>
+      </FileInfo>
+    </File>
+    <Config>
+      <Option Name="TopAutoSet" Val="TRUE"/>
+    </Config>
+  </FileSet>
+  <Strategy Version="1" Minor="2">
+    <StratHandle Name="Vivado Synthesis Defaults" Flow="Vivado Synthesis 2021">
+      <Desc>Vivado Synthesis Defaults</Desc>
+    </StratHandle>
+    <Step Id="synth_design"/>
+  </Strategy>
+</GenRun>

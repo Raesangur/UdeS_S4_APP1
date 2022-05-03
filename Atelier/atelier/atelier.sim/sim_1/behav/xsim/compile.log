@@ -1,0 +1,4 @@
+INFO: [VRFC 10-163] Analyzing VHDL file "/home/raesangur/github/UdeS_S4_APP1/Atelier/atelier/atelier.srcs/sources_1/imports/Atelier/compteur_simple.vhd" into library xil_defaultlib
+INFO: [VRFC 10-3107] analyzing entity 'compteur_simple'
+INFO: [VRFC 10-163] Analyzing VHDL file "/home/raesangur/github/UdeS_S4_APP1/Atelier/atelier/atelier.srcs/sim_1/imports/Atelier/compteur_simple_tb.vhd" into library xil_defaultlib
+INFO: [VRFC 10-3107] analyzing entity 'compteur_simple_tb'

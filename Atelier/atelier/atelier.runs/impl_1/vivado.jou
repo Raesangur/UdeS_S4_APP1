@@ -1,0 +1,13 @@
+#-----------------------------------------------------------
+# Vivado v2021.2 (64-bit)
+# SW Build 3367213 on Tue Oct 19 02:47:39 MDT 2021
+# IP Build 3369179 on Thu Oct 21 08:25:16 MDT 2021
+# Start of session at: Tue May  3 14:43:47 2022
+# Process ID: 23562
+# Current directory: /home/raesangur/github/UdeS_S4_APP1/Atelier/atelier/atelier.runs/impl_1
+# Command line: vivado -log circuit_compteur.vdi -applog -product Vivado -messageDb vivado.pb -mode batch -source circuit_compteur.tcl -notrace
+# Log file: /home/raesangur/github/UdeS_S4_APP1/Atelier/atelier/atelier.runs/impl_1/circuit_compteur.vdi
+# Journal file: /home/raesangur/github/UdeS_S4_APP1/Atelier/atelier/atelier.runs/impl_1/vivado.jou
+# Running On: mini-pascal, OS: Linux, CPU Frequency: 2800.000 MHz, CPU Physical cores: 4, Host memory: 33440 MB
+#-----------------------------------------------------------
+source circuit_compteur.tcl -notrace
