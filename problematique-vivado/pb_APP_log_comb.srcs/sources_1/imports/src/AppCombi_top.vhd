@@ -125,10 +125,6 @@ begin
    tb : PROCESS
    BEGIN         
        --> Cette partie est un exemple pour simuler le thermométrique
-         wait for PERIOD; Thermometrique <="111100001111";
-         wait for PERIOD; Thermometrique <="111100001111";
-         wait for PERIOD; Thermometrique <="111100001111";
-         wait for PERIOD; Thermometrique <="111100001111";
          wait for PERIOD; Thermometrique <="000000000000"; --> Code normal
          wait for PERIOD; Thermometrique <="000000000001";
          wait for PERIOD; Thermometrique <="000000000011";
@@ -144,7 +140,7 @@ begin
          wait for PERIOD; Thermometrique <="111111111111";
          wait for PERIOD; Thermometrique <="000000000010";  --> Code avec erreur
          wait for PERIOD; Thermometrique <="000000101111";
-         wait for PERIOD; Thermometrique <="111100001111";
+         --wait for PERIOD; Thermometrique <="111100001111";
          WAIT; -- will wait forever
    END PROCESS;
 end BEHAVIORAL;
