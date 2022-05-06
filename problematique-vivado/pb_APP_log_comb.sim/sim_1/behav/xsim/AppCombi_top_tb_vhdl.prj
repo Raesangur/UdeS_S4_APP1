@@ -15,6 +15,7 @@ vhdl xil_defaultlib  \
 "../../../../pb_APP_log_comb.srcs/sources_1/new/Count12Bits.vhd" \
 "../../../../pb_APP_log_comb.srcs/sources_1/new/Count4Bits_1Bits.vhd" \
 "../../../../pb_APP_log_comb.srcs/sources_1/new/Fct2_3.vhd" \
+"../../../../pb_APP_log_comb.srcs/sources_1/new/Decodeur3_8.vhd" \
 
 vhdl2008 xil_defaultlib  \
 "../../../../pb_APP_log_comb.srcs/sim_1/imports/verif/AppCombi_top_tb.vhd" \

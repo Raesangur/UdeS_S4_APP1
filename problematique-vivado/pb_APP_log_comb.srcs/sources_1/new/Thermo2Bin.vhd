@@ -141,7 +141,6 @@ begin
         bits4 => ADCbin
     );
     
-    
     erreur <= not checkeds(0) or not checkeds(1) or not checkeds(2) or not checkeds(3) or not checkeds(4) or not checkeds(5)
         or not checkeds(6) or not checkeds(7) or not checkeds(8) or not checkeds(9) or not checkeds(10);
 end Behavioral;

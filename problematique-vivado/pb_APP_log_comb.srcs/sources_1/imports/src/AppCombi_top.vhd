@@ -90,6 +90,15 @@ architecture BEHAVIORAL of AppCombi_top is
        A2_3 : out STD_LOGIC_VECTOR (2 downto 0)
    );
    end component;
+   signal s_A2_3 : std_logic_vector (2 downto 0);
+   
+   component Decodeur3_8 is
+   Port(
+        A2_3 : in STD_LOGIC_VECTOR (2 downto 0);
+        out3_8 : out STD_LOGIC_VECTOR (7 downto 0)
+   );
+   end component;
+   signal s_decoded3_8 : STD_LOGIC_VECTOR (7 downto 0);
 begin
 
     inst_synch : synchro_module_v2
@@ -119,9 +128,20 @@ begin
         
      fact2_3 : Fct2_3 port map (
         ADCbin => s_ADCbin,
-        A2_3 => o_led(2 downto 0)
+        A2_3 => s_A2_3
      );
+    
+    o_led(0) <= s_A2_3(0);
+    o_led(1) <= s_A2_3(1);
+    o_led(2) <= s_A2_3(2);
     o_led(3) <= '0';
+    
+    decode3_8 : Decodeur3_8 port map (
+        A2_3 => s_A2_3,
+        out3_8 => s_decoded3_8
+    );   
+    
+    o_pmodled <= s_decoded3_8;
     
     d_opa               <=  i_sw;                        -- operande A sur interrupteurs
     d_opb               <=  i_btn;                       -- operande B sur boutons
@@ -130,7 +150,7 @@ begin
     d_AFF0              <=  d_sum(3 downto 0);           -- Le resultat de votre additionneur affich� sur PmodSSD(0)
     d_AFF1              <=  '0' & '0' & '0' & d_Cout;    -- La retenue de sortie affich�e sur PmodSSD(1) (0 ou 1)
     -- o_led6_r            <=  d_Cout;                      -- La led couleur repr�sente aussi la retenue en sortie  Cout
-    o_pmodled           <=  Thermometrique(7 downto 0);               -- Les op�randes d'entr�s reproduits combin�s sur Pmod8LD
+    -- o_pmodled           <=  Thermometrique(7 downto 0);               -- Les op�randes d'entr�s reproduits combin�s sur Pmod8LD
     -- o_led (3 downto 0)  <=  '0' & '0' & '0' & d_S_1Hz;   -- La LED0 sur la carte repr�sente la retenue d'entr�e        
     
     
