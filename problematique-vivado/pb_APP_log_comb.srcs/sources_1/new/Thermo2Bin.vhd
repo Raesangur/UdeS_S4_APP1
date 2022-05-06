@@ -52,7 +52,7 @@ architecture Behavioral of Thermo2Bin is
             bits4 : out STD_LOGIC_VECTOR (3 downto 0)
         );
     end component;
-   signal carries : std_logic_vector (11 downto 0) := (others => '0') ;
+   signal carries : std_logic_vector (11 downto 0) := (others => '0') ;   
 begin
     
     -- pour la verification 

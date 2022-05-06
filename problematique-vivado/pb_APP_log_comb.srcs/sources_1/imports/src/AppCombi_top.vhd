@@ -82,6 +82,14 @@ architecture BEHAVIORAL of AppCombi_top is
     end component;    
     CONSTANT PERIOD    : time := 10 ns;   
     signal Thermometrique : std_logic_vector (11 downto 0);
+    signal s_ADCbin : std_logic_vector(3 downto 0);
+    
+   component Fct2_3 is
+   Port(
+        ADCbin : in STD_LOGIC_VECTOR (3 downto 0);
+       A2_3 : out STD_LOGIC_VECTOR (2 downto 0)
+   );
+   end component;
 begin
 
     inst_synch : synchro_module_v2
@@ -105,10 +113,16 @@ begin
     termo2Bin : Thermo2Bin
         port map (
             ADCth => Thermometrique,
-            ADCbin => o_led,
+            ADCbin => s_ADCbin,
             erreur => o_led6_r
         );
-
+        
+     fact2_3 : Fct2_3 port map (
+        ADCbin => s_ADCbin,
+        A2_3 => o_led(2 downto 0)
+     );
+    o_led(3) <= '0';
+    
     d_opa               <=  i_sw;                        -- operande A sur interrupteurs
     d_opb               <=  i_btn;                       -- operande B sur boutons
     d_cin               <=  '0';                     -- la retenue d'entrï¿½e alterne 0 1 a 1 Hz
@@ -118,6 +132,7 @@ begin
     -- o_led6_r            <=  d_Cout;                      -- La led couleur reprï¿½sente aussi la retenue en sortie  Cout
     o_pmodled           <=  Thermometrique(7 downto 0);               -- Les opï¿½randes d'entrï¿½s reproduits combinï¿½s sur Pmod8LD
     -- o_led (3 downto 0)  <=  '0' & '0' & '0' & d_S_1Hz;   -- La LED0 sur la carte reprï¿½sente la retenue d'entrï¿½e        
+    
     
     -- *** Test Bench - User Defined Section ***
 -- l'intérêt de cette structure de test bench est que l'on recopie la table de vérité.

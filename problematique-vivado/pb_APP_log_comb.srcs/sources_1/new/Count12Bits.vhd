@@ -47,6 +47,7 @@ architecture Behavioral of Count12Bits2_4b is
     Port(
         a : in  STD_LOGIC_VECTOR (3 downto 0);
         b : in  STD_LOGIC_VECTOR (3 downto 0);
+        c_in : in std_logic := '0';
         x : out STD_LOGIC_VECTOR (3 downto 0);
         c : out STD_LOGIC
     );
