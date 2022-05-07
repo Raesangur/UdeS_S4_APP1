@@ -139,14 +139,12 @@ begin
     decode3_8 : Decodeur3_8 port map (
         A2_3 => s_A2_3,
         out3_8 => s_decoded3_8
-    );   
-    
+    );    
     o_pmodled <= s_decoded3_8;
     
     d_opa               <=  i_sw;                        -- operande A sur interrupteurs
     d_opb               <=  i_btn;                       -- operande B sur boutons
     d_cin               <=  '0';                     -- la retenue d'entr�e alterne 0 1 a 1 Hz
-
     d_AFF0              <=  d_sum(3 downto 0);           -- Le resultat de votre additionneur affich� sur PmodSSD(0)
     d_AFF1              <=  '0' & '0' & '0' & d_Cout;    -- La retenue de sortie affich�e sur PmodSSD(1) (0 ou 1)
     -- o_led6_r            <=  d_Cout;                      -- La led couleur repr�sente aussi la retenue en sortie  Cout

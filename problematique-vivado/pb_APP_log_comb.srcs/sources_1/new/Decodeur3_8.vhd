@@ -37,15 +37,15 @@ entity Decodeur3_8 is
 end Decodeur3_8;
 
 architecture Behavioral of Decodeur3_8 is
- signal p_out : STD_LOGIC_VECTOR (7 downto 0) := (others => '0');
-begin
-    p_out(7) <= A2_3(0) and A2_3(1) and A2_3(2);
-    p_out(6) <= not A2_3(0) and A2_3(1) and A2_3(2);
-    p_out(5) <= A2_3(0) and not A2_3(1) and A2_3(2);
-    p_out(4) <= not A2_3(0) and not A2_3(1) and A2_3(2);
-    p_out(3) <= A2_3(0) and A2_3(1) and not A2_3(2);
-    p_out(2) <= not A2_3(0) and A2_3(1) and not A2_3(2);
-    p_out(1) <= A2_3(0) and not A2_3(1) and not A2_3(2);
-    p_out(0) <= not A2_3(0) and not A2_3(1) and not A2_3(2);
-    out3_8 <= p_out;
+
+begin			
+    out3_8 <= "10000000" when A2_3 = "111" else
+              "01000000" when A2_3 = "110" else
+              "00100000" when A2_3 = "101" else
+              "00010000" when A2_3 = "100" else
+              "00001000" when A2_3 = "011" else
+              "00000100" when A2_3 = "010" else
+              "00000010" when A2_3 = "001" else
+              "00000001" when A2_3 = "000" else
+              "00000000";
 end Behavioral;
