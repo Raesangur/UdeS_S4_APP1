@@ -79,7 +79,8 @@ architecture BEHAVIORAL of AppCombi_top is
              ADCbin : out STD_LOGIC_VECTOR (3 downto 0); -- sorties 12 vers 4 bit
              erreur : out STD_LOGIC                      -- pour sortir erreur
             );
-    end component;    
+    end component;
+    signal s_erreur : std_logic;    
     CONSTANT PERIOD    : time := 10 ns;   
     signal Thermometrique : std_logic_vector (11 downto 0);
     signal s_ADCbin : std_logic_vector(3 downto 0);
@@ -99,6 +100,34 @@ architecture BEHAVIORAL of AppCombi_top is
    );
    end component;
    signal s_decoded3_8 : STD_LOGIC_VECTOR (7 downto 0);
+   
+   component Bouton2Bin is
+   Port(
+        ADCbin : in STD_LOGIC_VECTOR (3 downto 0);
+       Dizaines : in STD_LOGIC_VECTOR (3 downto 0);
+       Unites_ns : in STD_LOGIC_VECTOR (3 downto 0);
+       Code_signe : in STD_LOGIC_VECTOR (3 downto 0);
+       Unite_s : in STD_LOGIC_VECTOR (3 downto 0);
+       erreur : in STD_LOGIC;
+       BTN0 : in STD_LOGIC;
+       BTN1 : in STD_LOGIC;
+       S1 : in STD_LOGIC;
+       S2 : in STD_LOGIC;
+       DAFF0 : out STD_LOGIC_VECTOR (3 downto 0);
+       DAFF1 : out STD_LOGIC_VECTOR (3 downto 0)
+   );
+   end component;
+   
+   component Bin2DualBCD is
+   Port (
+        ADCbin : in STD_LOGIC_VECTOR (3 downto 0);
+        Dizaines : out STD_LOGIC_VECTOR (3 downto 0);
+        Unites_ns : out STD_LOGIC_VECTOR (3 downto 0);
+        Code_signe : out STD_LOGIC_VECTOR (3 downto 0);
+        Unite_s : out STD_LOGIC_VECTOR (3 downto 0)
+   );
+   end component; 
+   signal s_Dizaines, s_Unites_ns, s_Code_signe, s_Unite_s : STD_LOGIC_VECTOR (3 downto 0);
 begin
 
     inst_synch : synchro_module_v2
@@ -121,11 +150,35 @@ begin
 
     termo2Bin : Thermo2Bin
         port map (
-            ADCth => Thermometrique,
+            ADCth => i_ADC_th,
             ADCbin => s_ADCbin,
-            erreur => o_led6_r
+            -- erreur => o_led6_r
+            erreur => s_erreur
         );
-        
+    toBCD : Bin2DualBCD
+    port map (
+        ADCbin => s_ADCbin,
+        Dizaines => s_Dizaines,
+        Unites_ns => s_Unites_ns,
+        Code_signe => s_Code_signe,
+        Unite_s => s_Unite_s
+    );
+    
+    mux : Bouton2Bin
+    port map (
+        ADCbin => s_ADCbin,
+       Dizaines => s_Dizaines,
+       Unites_ns => s_Unites_ns,
+       Code_signe => s_Code_signe,
+       Unite_s => s_Unite_s,
+       erreur => s_erreur,
+       BTN0 => i_btn(0),
+       BTN1=> i_btn(1),
+       S1 => i_sw(1),
+       S2 => i_sw(2),
+       DAFF0 => d_AFF0,
+       DAFF1 => d_AFF1
+    );        
      fact2_3 : Fct2_3 port map (
         ADCbin => s_ADCbin,
         A2_3 => s_A2_3
@@ -142,11 +195,12 @@ begin
     );    
     o_pmodled <= s_decoded3_8;
     
+    
     d_opa               <=  i_sw;                        -- operande A sur interrupteurs
     d_opb               <=  i_btn;                       -- operande B sur boutons
     d_cin               <=  '0';                     -- la retenue d'entrï¿½e alterne 0 1 a 1 Hz
-    d_AFF0              <=  d_sum(3 downto 0);           -- Le resultat de votre additionneur affichï¿½ sur PmodSSD(0)
-    d_AFF1              <=  '0' & '0' & '0' & d_Cout;    -- La retenue de sortie affichï¿½e sur PmodSSD(1) (0 ou 1)
+    -- d_AFF0              <=  d_sum(3 downto 0);           -- Le resultat de votre additionneur affichï¿½ sur PmodSSD(0)
+    -- d_AFF1              <=  '0' & '0' & '0' & d_Cout;    -- La retenue de sortie affichï¿½e sur PmodSSD(1) (0 ou 1)
     -- o_led6_r            <=  d_Cout;                      -- La led couleur reprï¿½sente aussi la retenue en sortie  Cout
     -- o_pmodled           <=  Thermometrique(7 downto 0);               -- Les opï¿½randes d'entrï¿½s reproduits combinï¿½s sur Pmod8LD
     -- o_led (3 downto 0)  <=  '0' & '0' & '0' & d_S_1Hz;   -- La LED0 sur la carte reprï¿½sente la retenue d'entrï¿½e        
@@ -155,26 +209,26 @@ begin
     -- *** Test Bench - User Defined Section ***
 -- l'intérêt de cette structure de test bench est que l'on recopie la table de vérité.
 
-   tb : PROCESS
-   BEGIN         
-       --> Cette partie est un exemple pour simuler le thermométrique
-         wait for PERIOD; Thermometrique <="000000000000"; --> Code normal
-         wait for PERIOD; Thermometrique <="000000000001";
-         wait for PERIOD; Thermometrique <="000000000011";
-         wait for PERIOD; Thermometrique <="000000000111";
-         wait for PERIOD; Thermometrique <="000000001111";
-         wait for PERIOD; Thermometrique <="000000011111";
-         wait for PERIOD; Thermometrique <="000000111111";
-         wait for PERIOD; Thermometrique <="000001110111";
-         wait for PERIOD; Thermometrique <="000011111111";
-         wait for PERIOD; Thermometrique <="000111111111";
-         wait for PERIOD; Thermometrique <="001111111111";
-         wait for PERIOD; Thermometrique <="011111111111";
-         wait for PERIOD; Thermometrique <="111111111111";
-         wait for PERIOD; Thermometrique <="000000000010";  --> Code avec erreur
-         wait for PERIOD; Thermometrique <="000000101111";
-         --wait for PERIOD; Thermometrique <="111100001111";
-         WAIT; -- will wait forever
-   END PROCESS;
+--   tb : PROCESS
+--   BEGIN         
+--       --> Cette partie est un exemple pour simuler le thermométrique
+--         wait for PERIOD; Thermometrique <="000000000000"; --> Code normal
+--         wait for PERIOD; Thermometrique <="000000000001";
+--         wait for PERIOD; Thermometrique <="000000000011";
+--         wait for PERIOD; Thermometrique <="000000000111";
+--         wait for PERIOD; Thermometrique <="000000001111";
+--         wait for PERIOD; Thermometrique <="000000011111";
+--         wait for PERIOD; Thermometrique <="000000111111";
+--         wait for PERIOD; Thermometrique <="000001110111";
+--         wait for PERIOD; Thermometrique <="000011111111";
+--         wait for PERIOD; Thermometrique <="000111111111";
+--         wait for PERIOD; Thermometrique <="001111111111";
+--         wait for PERIOD; Thermometrique <="011111111111";
+--         wait for PERIOD; Thermometrique <="111111111111";
+--         wait for PERIOD; Thermometrique <="000000000010";  --> Code avec erreur
+--         wait for PERIOD; Thermometrique <="000000101111";
+--         --wait for PERIOD; Thermometrique <="111100001111";
+--         WAIT; -- will wait forever
+--   END PROCESS;
 end BEHAVIORAL;
 
