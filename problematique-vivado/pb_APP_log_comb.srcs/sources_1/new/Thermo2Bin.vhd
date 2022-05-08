@@ -38,12 +38,12 @@ entity Thermo2Bin is
 end Thermo2Bin;
 
 architecture Behavioral of Thermo2Bin is
- component ThermoChecker2Bit is
-    Port ( th : in STD_LOGIC_VECTOR (1 downto 0);
-           carry : out std_logic;
-           check : out STD_LOGIC
-      );
-      end component;
+ component Thermo2Check_4bits is
+    Port ( 
+        bits : in STD_LOGIC_VECTOR (3 downto 0);
+           erreur : out std_logic
+    );
+  end component;
  signal checkeds : std_logic_vector (10 downto 0);  
  
     component Count12Bits2_4b is
@@ -52,86 +52,41 @@ architecture Behavioral of Thermo2Bin is
             bits4 : out STD_LOGIC_VECTOR (3 downto 0)
         );
     end component;
-   signal carries : std_logic_vector (11 downto 0) := (others => '0') ;   
+   signal e1, e2, e3, e4 : std_logic;   
 begin
     
     -- pour la verification 
     
-    thcheck1 : ThermoChecker2Bit port map (
-        th(0) => ADCth(0),
-        th(1) => ADCth(1),
-        carry => carries(0),
-        check => checkeds(0)
+    thcheck1 : Thermo2Check_4bits port map (
+        bits(0) => ADCth(0),
+        bits(1) => ADCth(1),
+        bits(2) => ADCth(2),
+        bits(3) => ADCth(3),
+        erreur => e1
     );
     
-    thcheck2 : ThermoChecker2Bit port map (
-        th(0) => carries(0),
-        th(1) => ADCth(2),
-        carry => carries(1),
-        check => checkeds(1)
+    thcheck2 : Thermo2Check_4bits port map (
+        bits(0) => ADCth(3),
+        bits(1) => ADCth(4),
+        bits(2) => ADCth(5),
+        bits(3) => ADCth(6),
+        erreur => e2
     );
     
-    thcheck3 : ThermoChecker2Bit port map (
-        th(0) => carries(1),
-        th(1) => ADCth(3),
-        carry => carries(2),
-        check => checkeds(2)
+    thcheck3 : Thermo2Check_4bits port map (
+        bits(0) => ADCth(6),
+        bits(1) => ADCth(7),
+        bits(2) => ADCth(8),
+        bits(3) => ADCth(9),
+        erreur => e3
     );
     
-    thcheck4 : ThermoChecker2Bit port map (
-        th(0) => carries(2),
-        th(1) => ADCth(4),
-        carry => carries(3),
-        check => checkeds(3)
-    );
-    
-    thcheck5 : ThermoChecker2Bit port map (
-        th(0) => carries(3),
-        th(1) => ADCth(5),
-        carry => carries(4),
-        check => checkeds(4)
-    );
-    
-    thcheck6 : ThermoChecker2Bit port map (
-        th(0) => carries(4),
-        th(1) => ADCth(6),
-        carry => carries(5),
-        check => checkeds(5)
-    );
-    
-    thcheck7 : ThermoChecker2Bit port map (
-        th(0) => carries(5),
-        th(1) => ADCth(7),
-        carry => carries(6),
-        check => checkeds(6)
-    );
-    
-    thcheck8 : ThermoChecker2Bit port map (
-        th(0) => carries(6),
-        th(1) => ADCth(8),
-        carry => carries(7),
-        check => checkeds(7)
-    );
-    
-    thcheck9 : ThermoChecker2Bit port map (
-        th(0) => carries(7),
-        th(1) => ADCth(9),
-        carry => carries(8),
-        check => checkeds(8)
-    );
-    
-    thcheck10 : ThermoChecker2Bit port map (
-        th(0) => carries(8),
-        th(1) => ADCth(10),
-        carry => carries(9),
-        check => checkeds(9)
-    );
-    
-    thcheck11 : ThermoChecker2Bit port map (
-        th(0) => carries(9),
-        th(1) => ADCth(11),
-        carry => carries(10),
-        check => checkeds(10)
+    thcheck4 : Thermo2Check_4bits port map (
+        bits(0) => ADCth(9),
+        bits(1) => ADCth(10),
+        bits(2) => ADCth(11),
+        bits(3)             => '0',
+        erreur => e4
     );
     
     -- compter les bits vers et output le nombre en binary
@@ -140,7 +95,5 @@ begin
         bits => ADCth,
         bits4 => ADCbin
     );
-    
-    erreur <= not checkeds(0) or not checkeds(1) or not checkeds(2) or not checkeds(3) or not checkeds(4) or not checkeds(5)
-        or not checkeds(6) or not checkeds(7) or not checkeds(8) or not checkeds(9) or not checkeds(10);
+    erreur <= e1 or e2 or e3 or e4;
 end Behavioral;

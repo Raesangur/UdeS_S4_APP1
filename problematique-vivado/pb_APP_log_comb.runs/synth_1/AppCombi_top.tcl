@@ -70,8 +70,6 @@ proc create_report { reportName command } {
   }
 }
 OPTRACE "synth_1" START { ROLLUP_AUTO }
-set_param chipscope.maxJobs 2
-set_param xicom.use_bs_reader 1
 OPTRACE "Creating in-memory project" START { }
 create_project -in_memory -part xc7z010clg400-1
 
@@ -109,6 +107,7 @@ read_vhdl -library xil_defaultlib {
   C:/github/UdeS_S4_APP1/problematique-vivado/pb_APP_log_comb.srcs/sources_1/new/Bin2DualBCD_S.vhd
   C:/github/UdeS_S4_APP1/problematique-vivado/pb_APP_log_comb.srcs/sources_1/new/Moins_5.vhd
   C:/github/UdeS_S4_APP1/problematique-vivado/pb_APP_log_comb.srcs/sources_1/new/Bouton2Bin.vhd
+  C:/github/UdeS_S4_APP1/problematique-vivado/pb_APP_log_comb.srcs/sources_1/new/Thermo2Check_4bits.vhd
 }
 OPTRACE "Adding files" END { }
 # Mark all dcp files as not used in implementation to prevent them from being

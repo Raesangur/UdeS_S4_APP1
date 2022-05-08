@@ -147,7 +147,6 @@ begin
             o_AFFSSD_Sim   => open,   -- ne pas modifier le "open". Ligne pour simulations seulement.
             o_AFFSSD       => o_SSD   -- sorties directement adaptees au connecteur PmodSSD
         );
-
     termo2Bin : Thermo2Bin
         port map (
             ADCth => i_ADC_th,
@@ -155,6 +154,7 @@ begin
             -- erreur => o_led6_r
             erreur => s_erreur
         );
+        
     toBCD : Bin2DualBCD
     port map (
         ADCbin => s_ADCbin,
@@ -176,10 +176,10 @@ begin
        BTN1=> i_btn(1),
        S1 => i_sw(1),
        S2 => i_sw(2),
-       DAFF0 => d_AFF0,
-       DAFF1 => d_AFF1
-    );        
-     fact2_3 : Fct2_3 port map (
+       DAFF0 => d_AFF1,
+       DAFF1 => d_AFF0       
+    );            
+    fact2_3 : Fct2_3 port map (
         ADCbin => s_ADCbin,
         A2_3 => s_A2_3
      );
@@ -194,6 +194,14 @@ begin
         out3_8 => s_decoded3_8
     );    
     o_pmodled <= s_decoded3_8;
+--    o_pmodled(0) <= i_ADC_th(0); 
+--    o_pmodled(1) <= i_ADC_th(1); 
+--    o_pmodled(2) <= i_ADC_th(2); 
+--    o_pmodled(3) <= i_ADC_th(3); 
+--    o_pmodled(4) <= i_ADC_th(4); 
+--    o_pmodled(5) <= i_ADC_th(5); 
+--    o_pmodled(6) <= i_ADC_th(6); 
+--    o_pmodled(7) <= i_ADC_th(7); 
     
     
     d_opa               <=  i_sw;                        -- operande A sur interrupteurs

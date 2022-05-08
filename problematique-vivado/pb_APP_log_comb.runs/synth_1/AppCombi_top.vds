@@ -2,8 +2,8 @@
 # Vivado v2022.1 (64-bit)
 # SW Build 3526262 on Mon Apr 18 15:48:16 MDT 2022
 # IP Build 3524634 on Mon Apr 18 20:55:01 MDT 2022
-# Start of session at: Sat May  7 12:40:00 2022
-# Process ID: 9876
+# Start of session at: Sun May  8 12:21:56 2022
+# Process ID: 14088
 # Current directory: C:/github/UdeS_S4_APP1/problematique-vivado/pb_APP_log_comb.runs/synth_1
 # Command line: vivado.exe -log AppCombi_top.vds -product Vivado -mode batch -messageDb vivado.pb -notrace -source AppCombi_top.tcl
 # Log file: C:/github/UdeS_S4_APP1/problematique-vivado/pb_APP_log_comb.runs/synth_1/AppCombi_top.vds
@@ -11,7 +11,7 @@
 # Running On: DESKTOP-D593BJC, OS: Windows, CPU Frequency: 3593 MHz, CPU Physical cores: 8, Host memory: 32133 MB
 #-----------------------------------------------------------
 source AppCombi_top.tcl -notrace
-create_project: Time (s): cpu = 00:00:05 ; elapsed = 00:00:06 . Memory (MB): peak = 1374.602 ; gain = 0.000
+create_project: Time (s): cpu = 00:00:05 ; elapsed = 00:00:05 . Memory (MB): peak = 1374.457 ; gain = 0.000
 Command: synth_design -top AppCombi_top -part xc7z010clg400-1
 Starting synth_design
 Attempting to get a license for feature 'Synthesis' and/or device 'xc7z010'
@@ -19,9 +19,9 @@ INFO: [Common 17-349] Got license for feature 'Synthesis' and/or device 'xc7z010
 INFO: [Device 21-403] Loading part xc7z010clg400-1
 INFO: [Synth 8-7079] Multithreading enabled for synth_design using a maximum of 2 processes.
 INFO: [Synth 8-7078] Launching helper process for spawning children vivado processes
-INFO: [Synth 8-7075] Helper process launched with PID 11296
+INFO: [Synth 8-7075] Helper process launched with PID 16960
 ---------------------------------------------------------------------------------
-Starting RTL Elaboration : Time (s): cpu = 00:00:09 ; elapsed = 00:00:10 . Memory (MB): peak = 1374.602 ; gain = 0.000
+Starting RTL Elaboration : Time (s): cpu = 00:00:09 ; elapsed = 00:00:09 . Memory (MB): peak = 1374.457 ; gain = 0.000
 ---------------------------------------------------------------------------------
 INFO: [Synth 8-638] synthesizing module 'AppCombi_top' [C:/github/UdeS_S4_APP1/problematique-vivado/pb_APP_log_comb.srcs/sources_1/imports/src/AppCombi_top.vhd:41]
 	Parameter const_CLK_syst_MHz bound to: 125 - type: integer 
@@ -42,22 +42,15 @@ INFO: [Synth 8-638] synthesizing module 'septSegments_refreshPmod' [C:/github/Ud
 	Parameter const_CLK_MHz bound to: 100 - type: integer 
 INFO: [Synth 8-256] done synthesizing module 'septSegments_refreshPmod' (0#1) [C:/github/UdeS_S4_APP1/problematique-vivado/pb_APP_log_comb.srcs/sources_1/imports/src/septSegments_refreshPmod.vhd:29]
 INFO: [Synth 8-256] done synthesizing module 'septSegments_Top' (0#1) [C:/github/UdeS_S4_APP1/problematique-vivado/pb_APP_log_comb.srcs/sources_1/imports/src/septSegments_Top.vhd:56]
-INFO: [Synth 8-3491] module 'Thermo2Bin' declared at 'C:/github/UdeS_S4_APP1/problematique-vivado/pb_APP_log_comb.srcs/sources_1/new/Thermo2Bin.vhd:34' bound to instance 'termo2Bin' of component 'Thermo2Bin' [C:/github/UdeS_S4_APP1/problematique-vivado/pb_APP_log_comb.srcs/sources_1/imports/src/AppCombi_top.vhd:151]
+INFO: [Synth 8-3491] module 'Thermo2Bin' declared at 'C:/github/UdeS_S4_APP1/problematique-vivado/pb_APP_log_comb.srcs/sources_1/new/Thermo2Bin.vhd:34' bound to instance 'termo2Bin' of component 'Thermo2Bin' [C:/github/UdeS_S4_APP1/problematique-vivado/pb_APP_log_comb.srcs/sources_1/imports/src/AppCombi_top.vhd:150]
 INFO: [Synth 8-638] synthesizing module 'Thermo2Bin' [C:/github/UdeS_S4_APP1/problematique-vivado/pb_APP_log_comb.srcs/sources_1/new/Thermo2Bin.vhd:40]
-INFO: [Synth 8-3491] module 'ThermoChecker2Bit' declared at 'C:/github/UdeS_S4_APP1/problematique-vivado/pb_APP_log_comb.srcs/sources_1/new/ThermoChecker2Bit.vhd:25' bound to instance 'thcheck1' of component 'ThermoChecker2Bit' [C:/github/UdeS_S4_APP1/problematique-vivado/pb_APP_log_comb.srcs/sources_1/new/Thermo2Bin.vhd:60]
-INFO: [Synth 8-638] synthesizing module 'ThermoChecker2Bit' [C:/github/UdeS_S4_APP1/problematique-vivado/pb_APP_log_comb.srcs/sources_1/new/ThermoChecker2Bit.vhd:31]
-INFO: [Synth 8-256] done synthesizing module 'ThermoChecker2Bit' (0#1) [C:/github/UdeS_S4_APP1/problematique-vivado/pb_APP_log_comb.srcs/sources_1/new/ThermoChecker2Bit.vhd:31]
-INFO: [Synth 8-3491] module 'ThermoChecker2Bit' declared at 'C:/github/UdeS_S4_APP1/problematique-vivado/pb_APP_log_comb.srcs/sources_1/new/ThermoChecker2Bit.vhd:25' bound to instance 'thcheck2' of component 'ThermoChecker2Bit' [C:/github/UdeS_S4_APP1/problematique-vivado/pb_APP_log_comb.srcs/sources_1/new/Thermo2Bin.vhd:67]
-INFO: [Synth 8-3491] module 'ThermoChecker2Bit' declared at 'C:/github/UdeS_S4_APP1/problematique-vivado/pb_APP_log_comb.srcs/sources_1/new/ThermoChecker2Bit.vhd:25' bound to instance 'thcheck3' of component 'ThermoChecker2Bit' [C:/github/UdeS_S4_APP1/problematique-vivado/pb_APP_log_comb.srcs/sources_1/new/Thermo2Bin.vhd:74]
-INFO: [Synth 8-3491] module 'ThermoChecker2Bit' declared at 'C:/github/UdeS_S4_APP1/problematique-vivado/pb_APP_log_comb.srcs/sources_1/new/ThermoChecker2Bit.vhd:25' bound to instance 'thcheck4' of component 'ThermoChecker2Bit' [C:/github/UdeS_S4_APP1/problematique-vivado/pb_APP_log_comb.srcs/sources_1/new/Thermo2Bin.vhd:81]
-INFO: [Synth 8-3491] module 'ThermoChecker2Bit' declared at 'C:/github/UdeS_S4_APP1/problematique-vivado/pb_APP_log_comb.srcs/sources_1/new/ThermoChecker2Bit.vhd:25' bound to instance 'thcheck5' of component 'ThermoChecker2Bit' [C:/github/UdeS_S4_APP1/problematique-vivado/pb_APP_log_comb.srcs/sources_1/new/Thermo2Bin.vhd:88]
-INFO: [Synth 8-3491] module 'ThermoChecker2Bit' declared at 'C:/github/UdeS_S4_APP1/problematique-vivado/pb_APP_log_comb.srcs/sources_1/new/ThermoChecker2Bit.vhd:25' bound to instance 'thcheck6' of component 'ThermoChecker2Bit' [C:/github/UdeS_S4_APP1/problematique-vivado/pb_APP_log_comb.srcs/sources_1/new/Thermo2Bin.vhd:95]
-INFO: [Synth 8-3491] module 'ThermoChecker2Bit' declared at 'C:/github/UdeS_S4_APP1/problematique-vivado/pb_APP_log_comb.srcs/sources_1/new/ThermoChecker2Bit.vhd:25' bound to instance 'thcheck7' of component 'ThermoChecker2Bit' [C:/github/UdeS_S4_APP1/problematique-vivado/pb_APP_log_comb.srcs/sources_1/new/Thermo2Bin.vhd:102]
-INFO: [Synth 8-3491] module 'ThermoChecker2Bit' declared at 'C:/github/UdeS_S4_APP1/problematique-vivado/pb_APP_log_comb.srcs/sources_1/new/ThermoChecker2Bit.vhd:25' bound to instance 'thcheck8' of component 'ThermoChecker2Bit' [C:/github/UdeS_S4_APP1/problematique-vivado/pb_APP_log_comb.srcs/sources_1/new/Thermo2Bin.vhd:109]
-INFO: [Synth 8-3491] module 'ThermoChecker2Bit' declared at 'C:/github/UdeS_S4_APP1/problematique-vivado/pb_APP_log_comb.srcs/sources_1/new/ThermoChecker2Bit.vhd:25' bound to instance 'thcheck9' of component 'ThermoChecker2Bit' [C:/github/UdeS_S4_APP1/problematique-vivado/pb_APP_log_comb.srcs/sources_1/new/Thermo2Bin.vhd:116]
-INFO: [Synth 8-3491] module 'ThermoChecker2Bit' declared at 'C:/github/UdeS_S4_APP1/problematique-vivado/pb_APP_log_comb.srcs/sources_1/new/ThermoChecker2Bit.vhd:25' bound to instance 'thcheck10' of component 'ThermoChecker2Bit' [C:/github/UdeS_S4_APP1/problematique-vivado/pb_APP_log_comb.srcs/sources_1/new/Thermo2Bin.vhd:123]
-INFO: [Synth 8-3491] module 'ThermoChecker2Bit' declared at 'C:/github/UdeS_S4_APP1/problematique-vivado/pb_APP_log_comb.srcs/sources_1/new/ThermoChecker2Bit.vhd:25' bound to instance 'thcheck11' of component 'ThermoChecker2Bit' [C:/github/UdeS_S4_APP1/problematique-vivado/pb_APP_log_comb.srcs/sources_1/new/Thermo2Bin.vhd:130]
-INFO: [Synth 8-3491] module 'Count12Bits2_4b' declared at 'C:/github/UdeS_S4_APP1/problematique-vivado/pb_APP_log_comb.srcs/sources_1/new/Count12Bits.vhd:34' bound to instance 'c' of component 'Count12Bits2_4b' [C:/github/UdeS_S4_APP1/problematique-vivado/pb_APP_log_comb.srcs/sources_1/new/Thermo2Bin.vhd:139]
+INFO: [Synth 8-3491] module 'Thermo2Check_4bits' declared at 'C:/github/UdeS_S4_APP1/problematique-vivado/pb_APP_log_comb.srcs/sources_1/new/Thermo2Check_4bits.vhd:34' bound to instance 'thcheck1' of component 'Thermo2Check_4bits' [C:/github/UdeS_S4_APP1/problematique-vivado/pb_APP_log_comb.srcs/sources_1/new/Thermo2Bin.vhd:60]
+INFO: [Synth 8-638] synthesizing module 'Thermo2Check_4bits' [C:/github/UdeS_S4_APP1/problematique-vivado/pb_APP_log_comb.srcs/sources_1/new/Thermo2Check_4bits.vhd:39]
+INFO: [Synth 8-256] done synthesizing module 'Thermo2Check_4bits' (0#1) [C:/github/UdeS_S4_APP1/problematique-vivado/pb_APP_log_comb.srcs/sources_1/new/Thermo2Check_4bits.vhd:39]
+INFO: [Synth 8-3491] module 'Thermo2Check_4bits' declared at 'C:/github/UdeS_S4_APP1/problematique-vivado/pb_APP_log_comb.srcs/sources_1/new/Thermo2Check_4bits.vhd:34' bound to instance 'thcheck2' of component 'Thermo2Check_4bits' [C:/github/UdeS_S4_APP1/problematique-vivado/pb_APP_log_comb.srcs/sources_1/new/Thermo2Bin.vhd:68]
+INFO: [Synth 8-3491] module 'Thermo2Check_4bits' declared at 'C:/github/UdeS_S4_APP1/problematique-vivado/pb_APP_log_comb.srcs/sources_1/new/Thermo2Check_4bits.vhd:34' bound to instance 'thcheck3' of component 'Thermo2Check_4bits' [C:/github/UdeS_S4_APP1/problematique-vivado/pb_APP_log_comb.srcs/sources_1/new/Thermo2Bin.vhd:76]
+INFO: [Synth 8-3491] module 'Thermo2Check_4bits' declared at 'C:/github/UdeS_S4_APP1/problematique-vivado/pb_APP_log_comb.srcs/sources_1/new/Thermo2Check_4bits.vhd:34' bound to instance 'thcheck4' of component 'Thermo2Check_4bits' [C:/github/UdeS_S4_APP1/problematique-vivado/pb_APP_log_comb.srcs/sources_1/new/Thermo2Bin.vhd:84]
+INFO: [Synth 8-3491] module 'Count12Bits2_4b' declared at 'C:/github/UdeS_S4_APP1/problematique-vivado/pb_APP_log_comb.srcs/sources_1/new/Count12Bits.vhd:34' bound to instance 'c' of component 'Count12Bits2_4b' [C:/github/UdeS_S4_APP1/problematique-vivado/pb_APP_log_comb.srcs/sources_1/new/Thermo2Bin.vhd:94]
 INFO: [Synth 8-638] synthesizing module 'Count12Bits2_4b' [C:/github/UdeS_S4_APP1/problematique-vivado/pb_APP_log_comb.srcs/sources_1/new/Count12Bits.vhd:39]
 INFO: [Synth 8-3491] module 'Count4Bits_1Bits' declared at 'C:/github/UdeS_S4_APP1/problematique-vivado/pb_APP_log_comb.srcs/sources_1/new/Count4Bits_1Bits.vhd:34' bound to instance 'h1' of component 'Count4Bits_1Bits' [C:/github/UdeS_S4_APP1/problematique-vivado/pb_APP_log_comb.srcs/sources_1/new/Count12Bits.vhd:58]
 INFO: [Synth 8-638] synthesizing module 'Count4Bits_1Bits' [C:/github/UdeS_S4_APP1/problematique-vivado/pb_APP_log_comb.srcs/sources_1/new/Count4Bits_1Bits.vhd:39]
@@ -121,18 +114,18 @@ WARNING: [Synth 8-7129] Port i_btn[2] in module AppCombi_top is either unconnect
 WARNING: [Synth 8-7129] Port i_sw[3] in module AppCombi_top is either unconnected or has no load
 WARNING: [Synth 8-7129] Port i_sw[0] in module AppCombi_top is either unconnected or has no load
 ---------------------------------------------------------------------------------
-Finished RTL Elaboration : Time (s): cpu = 00:00:13 ; elapsed = 00:00:13 . Memory (MB): peak = 1374.602 ; gain = 0.000
+Finished RTL Elaboration : Time (s): cpu = 00:00:12 ; elapsed = 00:00:13 . Memory (MB): peak = 1374.457 ; gain = 0.000
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Handling Custom Attributes
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Handling Custom Attributes : Time (s): cpu = 00:00:13 ; elapsed = 00:00:13 . Memory (MB): peak = 1374.602 ; gain = 0.000
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:12 ; elapsed = 00:00:13 . Memory (MB): peak = 1374.457 ; gain = 0.000
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:13 ; elapsed = 00:00:13 . Memory (MB): peak = 1374.602 ; gain = 0.000
+Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:12 ; elapsed = 00:00:13 . Memory (MB): peak = 1374.457 ; gain = 0.000
 ---------------------------------------------------------------------------------
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.005 . Memory (MB): peak = 1374.602 ; gain = 0.000
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.004 . Memory (MB): peak = 1374.457 ; gain = 0.000
 INFO: [Project 1-570] Preparing netlist for logic optimization
 
 Processing XDC Constraints
@@ -155,29 +148,29 @@ INFO: [Project 1-236] Implementation specific constraints were found while readi
 Resolution: To avoid this warning, move constraints listed in [.Xil/AppCombi_top_propImpl.xdc] to another XDC file and exclude this new file from synthesis with the used_in_synthesis property (File Properties dialog in GUI) and re-run elaboration/synthesis.
 Completed Processing XDC Constraints
 
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 1424.172 ; gain = 0.000
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.001 . Memory (MB): peak = 1437.531 ; gain = 0.000
 INFO: [Project 1-111] Unisim Transformation Summary:
 No Unisim elements were transformed.
 
-Constraint Validation Runtime : Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.005 . Memory (MB): peak = 1424.172 ; gain = 0.000
+Constraint Validation Runtime : Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.007 . Memory (MB): peak = 1437.531 ; gain = 0.000
 ---------------------------------------------------------------------------------
-Finished Constraint Validation : Time (s): cpu = 00:00:25 ; elapsed = 00:00:26 . Memory (MB): peak = 1424.172 ; gain = 49.570
+Finished Constraint Validation : Time (s): cpu = 00:00:24 ; elapsed = 00:00:25 . Memory (MB): peak = 1437.531 ; gain = 63.074
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Loading Part and Timing Information
 ---------------------------------------------------------------------------------
 Loading part: xc7z010clg400-1
 ---------------------------------------------------------------------------------
-Finished Loading Part and Timing Information : Time (s): cpu = 00:00:25 ; elapsed = 00:00:26 . Memory (MB): peak = 1424.172 ; gain = 49.570
+Finished Loading Part and Timing Information : Time (s): cpu = 00:00:24 ; elapsed = 00:00:25 . Memory (MB): peak = 1437.531 ; gain = 63.074
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Applying 'set_property' XDC Constraints
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:25 ; elapsed = 00:00:26 . Memory (MB): peak = 1424.172 ; gain = 49.570
+Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:24 ; elapsed = 00:00:25 . Memory (MB): peak = 1437.531 ; gain = 63.074
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:26 ; elapsed = 00:00:27 . Memory (MB): peak = 1424.172 ; gain = 49.570
+Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:25 ; elapsed = 00:00:26 . Memory (MB): peak = 1437.531 ; gain = 63.074
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start RTL Component Statistics 
@@ -195,7 +188,7 @@ Detailed RTL Component Info :
 	                1 Bit    Registers := 3     
 +---Muxes : 
 	   9 Input    8 Bit        Muxes := 1     
-	  15 Input    7 Bit        Muxes := 2     
+	  16 Input    7 Bit        Muxes := 2     
 	   2 Input    7 Bit        Muxes := 1     
 	  14 Input    4 Bit        Muxes := 1     
 	   2 Input    4 Bit        Muxes := 6     
@@ -226,25 +219,25 @@ WARNING: [Synth 8-7129] Port i_sw[3] in module AppCombi_top is either unconnecte
 WARNING: [Synth 8-7129] Port i_sw[1] in module AppCombi_top is either unconnected or has no load
 WARNING: [Synth 8-7129] Port i_sw[0] in module AppCombi_top is either unconnected or has no load
 ---------------------------------------------------------------------------------
-Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:30 ; elapsed = 00:00:31 . Memory (MB): peak = 1424.172 ; gain = 49.570
+Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:29 ; elapsed = 00:00:30 . Memory (MB): peak = 1437.531 ; gain = 63.074
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Applying XDC Timing Constraints
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Applying XDC Timing Constraints : Time (s): cpu = 00:00:40 ; elapsed = 00:00:41 . Memory (MB): peak = 1424.172 ; gain = 49.570
+Finished Applying XDC Timing Constraints : Time (s): cpu = 00:00:38 ; elapsed = 00:00:39 . Memory (MB): peak = 1437.531 ; gain = 63.074
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Timing Optimization
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Timing Optimization : Time (s): cpu = 00:00:40 ; elapsed = 00:00:41 . Memory (MB): peak = 1424.172 ; gain = 49.570
+Finished Timing Optimization : Time (s): cpu = 00:00:38 ; elapsed = 00:00:39 . Memory (MB): peak = 1437.531 ; gain = 63.074
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Technology Mapping
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Technology Mapping : Time (s): cpu = 00:00:40 ; elapsed = 00:00:41 . Memory (MB): peak = 1424.172 ; gain = 49.570
+Finished Technology Mapping : Time (s): cpu = 00:00:38 ; elapsed = 00:00:39 . Memory (MB): peak = 1437.531 ; gain = 63.074
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start IO Insertion
@@ -262,37 +255,37 @@ Start Final Netlist Cleanup
 Finished Final Netlist Cleanup
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished IO Insertion : Time (s): cpu = 00:00:48 ; elapsed = 00:00:49 . Memory (MB): peak = 1424.172 ; gain = 49.570
+Finished IO Insertion : Time (s): cpu = 00:00:45 ; elapsed = 00:00:47 . Memory (MB): peak = 1437.531 ; gain = 63.074
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Instances
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Instances : Time (s): cpu = 00:00:48 ; elapsed = 00:00:49 . Memory (MB): peak = 1424.172 ; gain = 49.570
+Finished Renaming Generated Instances : Time (s): cpu = 00:00:45 ; elapsed = 00:00:47 . Memory (MB): peak = 1437.531 ; gain = 63.074
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Rebuilding User Hierarchy
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Rebuilding User Hierarchy : Time (s): cpu = 00:00:48 ; elapsed = 00:00:49 . Memory (MB): peak = 1424.172 ; gain = 49.570
+Finished Rebuilding User Hierarchy : Time (s): cpu = 00:00:45 ; elapsed = 00:00:47 . Memory (MB): peak = 1437.531 ; gain = 63.074
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Ports
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Ports : Time (s): cpu = 00:00:48 ; elapsed = 00:00:49 . Memory (MB): peak = 1424.172 ; gain = 49.570
+Finished Renaming Generated Ports : Time (s): cpu = 00:00:45 ; elapsed = 00:00:47 . Memory (MB): peak = 1437.531 ; gain = 63.074
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Handling Custom Attributes
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Handling Custom Attributes : Time (s): cpu = 00:00:48 ; elapsed = 00:00:49 . Memory (MB): peak = 1424.172 ; gain = 49.570
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:45 ; elapsed = 00:00:47 . Memory (MB): peak = 1437.531 ; gain = 63.074
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Nets
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Nets : Time (s): cpu = 00:00:48 ; elapsed = 00:00:49 . Memory (MB): peak = 1424.172 ; gain = 49.570
+Finished Renaming Generated Nets : Time (s): cpu = 00:00:45 ; elapsed = 00:00:47 . Memory (MB): peak = 1437.531 ; gain = 63.074
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Writing Synthesis Report
@@ -311,39 +304,38 @@ Report Cell Usage:
 |1     |BUFG   |     2|
 |2     |CARRY4 |     4|
 |3     |LUT1   |     2|
-|4     |LUT2   |     2|
-|5     |LUT3   |     4|
-|6     |LUT4   |    19|
-|7     |LUT5   |    18|
-|8     |LUT6   |    19|
-|9     |MUXF7  |     7|
-|10    |FDRE   |    30|
-|11    |IBUF   |    16|
-|12    |OBUF   |    20|
-|13    |OBUFT  |     1|
+|4     |LUT2   |     5|
+|5     |LUT3   |     6|
+|6     |LUT4   |    16|
+|7     |LUT5   |     3|
+|8     |LUT6   |    35|
+|9     |FDRE   |    30|
+|10    |IBUF   |    16|
+|11    |OBUF   |    20|
+|12    |OBUFT  |     1|
 +------+-------+------+
 ---------------------------------------------------------------------------------
-Finished Writing Synthesis Report : Time (s): cpu = 00:00:48 ; elapsed = 00:00:49 . Memory (MB): peak = 1424.172 ; gain = 49.570
+Finished Writing Synthesis Report : Time (s): cpu = 00:00:45 ; elapsed = 00:00:47 . Memory (MB): peak = 1437.531 ; gain = 63.074
 ---------------------------------------------------------------------------------
 Synthesis finished with 0 errors, 0 critical warnings and 8 warnings.
-Synthesis Optimization Runtime : Time (s): cpu = 00:00:32 ; elapsed = 00:00:46 . Memory (MB): peak = 1424.172 ; gain = 0.000
-Synthesis Optimization Complete : Time (s): cpu = 00:00:48 ; elapsed = 00:00:49 . Memory (MB): peak = 1424.172 ; gain = 49.570
+Synthesis Optimization Runtime : Time (s): cpu = 00:00:31 ; elapsed = 00:00:44 . Memory (MB): peak = 1437.531 ; gain = 0.000
+Synthesis Optimization Complete : Time (s): cpu = 00:00:46 ; elapsed = 00:00:47 . Memory (MB): peak = 1437.531 ; gain = 63.074
 INFO: [Project 1-571] Translating synthesized netlist
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.002 . Memory (MB): peak = 1424.172 ; gain = 0.000
-INFO: [Netlist 29-17] Analyzing 11 Unisim elements for replacement
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.003 . Memory (MB): peak = 1437.531 ; gain = 0.000
+INFO: [Netlist 29-17] Analyzing 4 Unisim elements for replacement
 INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
 INFO: [Project 1-570] Preparing netlist for logic optimization
 INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 1424.172 ; gain = 0.000
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 1437.531 ; gain = 0.000
 INFO: [Project 1-111] Unisim Transformation Summary:
 No Unisim elements were transformed.
 
-Synth Design complete, checksum: 5143fbf4
+Synth Design complete, checksum: d2a434c8
 INFO: [Common 17-83] Releasing license: Synthesis
-96 Infos, 25 Warnings, 4 Critical Warnings and 0 Errors encountered.
+89 Infos, 25 Warnings, 4 Critical Warnings and 0 Errors encountered.
 synth_design completed successfully
-synth_design: Time (s): cpu = 00:00:55 ; elapsed = 00:00:57 . Memory (MB): peak = 1424.172 ; gain = 49.570
+synth_design: Time (s): cpu = 00:00:51 ; elapsed = 00:00:54 . Memory (MB): peak = 1437.531 ; gain = 63.074
 INFO: [runtcl-6] Synthesis results are not added to the cache due to CRITICAL_WARNING
 INFO: [Common 17-1381] The checkpoint 'C:/github/UdeS_S4_APP1/problematique-vivado/pb_APP_log_comb.runs/synth_1/AppCombi_top.dcp' has been generated.
 INFO: [runtcl-4] Executing : report_utilization -file AppCombi_top_utilization_synth.rpt -pb AppCombi_top_utilization_synth.pb
-INFO: [Common 17-206] Exiting Vivado at Sat May  7 12:41:10 2022...
+INFO: [Common 17-206] Exiting Vivado at Sun May  8 12:23:01 2022...

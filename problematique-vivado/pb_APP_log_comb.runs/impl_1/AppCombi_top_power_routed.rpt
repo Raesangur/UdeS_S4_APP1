@@ -1,7 +1,7 @@
 Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
 ----------------------------------------------------------------------------------------------------------------------------------------------------------
 | Tool Version     : Vivado v.2022.1 (win64) Build 3526262 Mon Apr 18 15:48:16 MDT 2022
-| Date             : Sat May  7 12:42:37 2022
+| Date             : Sun May  8 12:24:26 2022
 | Host             : DESKTOP-D593BJC running 64-bit major release  (build 9200)
 | Command          : report_power -file AppCombi_top_power_routed.rpt -pb AppCombi_top_power_summary_routed.pb -rpx AppCombi_top_power_routed.rpx
 | Design           : AppCombi_top
@@ -30,7 +30,7 @@ Table of Contents
 ----------
 
 +--------------------------+--------------+
-| Total On-Chip Power (W)  | 0.116        |
+| Total On-Chip Power (W)  | 0.115        |
 | Design Power Budget (W)  | Unspecified* |
 | Power Budget Margin (W)  | NA           |
 | Dynamic (W)              | 0.022        |
@@ -53,17 +53,16 @@ Table of Contents
 | On-Chip        | Power (W) | Used     | Available | Utilization (%) |
 +----------------+-----------+----------+-----------+-----------------+
 | Clocks         |    <0.001 |        3 |       --- |             --- |
-| Slice Logic    |    <0.001 |      112 |       --- |             --- |
-|   LUT as Logic |    <0.001 |       54 |     17600 |            0.31 |
+| Slice Logic    |    <0.001 |      108 |       --- |             --- |
+|   LUT as Logic |    <0.001 |       56 |     17600 |            0.32 |
 |   Register     |    <0.001 |       30 |     35200 |            0.09 |
 |   CARRY4       |    <0.001 |        4 |      4400 |            0.09 |
 |   BUFG         |    <0.001 |        1 |        32 |            3.13 |
-|   F7/F8 Muxes  |    <0.001 |        7 |     17600 |            0.04 |
 |   Others       |     0.000 |        6 |       --- |             --- |
-| Signals        |     0.001 |       92 |       --- |             --- |
+| Signals        |    <0.001 |      101 |       --- |             --- |
 | I/O            |     0.020 |       37 |       100 |           37.00 |
 | Static Power   |     0.093 |          |           |                 |
-| Total          |     0.116 |          |           |                 |
+| Total          |     0.115 |          |           |                 |
 +----------------+-----------+----------+-----------+-----------------+
 
 
@@ -73,7 +72,7 @@ Table of Contents
 +-----------+-------------+-----------+-------------+------------+-------------+-------------+------------+
 | Source    | Voltage (V) | Total (A) | Dynamic (A) | Static (A) | Powerup (A) | Budget (A)  | Margin (A) |
 +-----------+-------------+-----------+-------------+------------+-------------+-------------+------------+
-| Vccint    |       1.000 |     0.006 |       0.003 |      0.004 |       NA    | Unspecified | NA         |
+| Vccint    |       1.000 |     0.006 |       0.002 |      0.004 |       NA    | Unspecified | NA         |
 | Vccaux    |       1.800 |     0.006 |       0.001 |      0.005 |       NA    | Unspecified | NA         |
 | Vcco33    |       3.300 |     0.007 |       0.006 |      0.001 |       NA    | Unspecified | NA         |
 | Vcco25    |       2.500 |     0.000 |       0.000 |      0.000 |       NA    | Unspecified | NA         |
@@ -146,12 +145,10 @@ Table of Contents
 3.1 By Hierarchy
 ----------------
 
-+------------------+-----------+
-| Name             | Power (W) |
-+------------------+-----------+
-| AppCombi_top     |     0.022 |
-|   inst_aff       |     0.001 |
-|     inst_refresh |     0.001 |
-+------------------+-----------+
++--------------+-----------+
+| Name         | Power (W) |
++--------------+-----------+
+| AppCombi_top |     0.022 |
++--------------+-----------+
 
 

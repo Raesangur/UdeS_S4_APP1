@@ -77,23 +77,23 @@ begin
                 Unite_s <= "0111";
             -- -5
             when "1011" =>
-                Code_signe <= SIGNE_MINUS;
+                Code_signe <= "1101";
                 Unite_s <= "0101";
             -- -4
             when "1100" =>
-                Code_signe <= SIGNE_MINUS;
+                Code_signe <= "1101";
                 Unite_s <= "0100";
             -- -3
             when "1101" =>
-                Code_signe <= SIGNE_MINUS;
+                Code_signe <= "1101";
                 Unite_s <= "0011";
             -- -2
             when "1110" =>
-                Code_signe <= SIGNE_MINUS;
+                Code_signe <= "1101";
                 Unite_s <= "0010";
             -- -1
             when "1111" =>
-                Code_signe <= SIGNE_MINUS;
+                Code_signe <= "1101";
                 Unite_s <= "0001";
             when others =>
                 Code_signe <= "0000";

@@ -63,6 +63,9 @@ begin
         if (S2 = '1' OR (BTN0 = '1' and BTN1 = '1') OR erreur = '1') then
             DAFF0 <= CODE_ERREUR_AFF0;
             DAFF1 <= CODE_ERREUR_AFF1;
+
+--                DAFF0 <= Dizaines;
+--                DAFF1 <= Unites_ns;
         else
             if (BTN0 = '0' AND BTN1 = '0') then
                 DAFF0 <= Dizaines;
