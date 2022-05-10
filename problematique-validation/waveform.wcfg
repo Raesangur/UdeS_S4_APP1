@@ -11,59 +11,29 @@
    </db_ref_list>
    <zoom_setting>
       <ZoomStartTime time="0fs"></ZoomStartTime>
-      <ZoomEndTime time="303001fs"></ZoomEndTime>
-      <Cursor1Time time="83380fs"></Cursor1Time>
+      <ZoomEndTime time="381001fs"></ZoomEndTime>
+      <Cursor1Time time="0fs"></Cursor1Time>
    </zoom_setting>
    <column_width_setting>
-      <NameColumnWidth column_width="201"></NameColumnWidth>
-      <ValueColumnWidth column_width="120"></ValueColumnWidth>
+      <NameColumnWidth column_width="186"></NameColumnWidth>
+      <ValueColumnWidth column_width="90"></ValueColumnWidth>
    </column_width_setting>
-   <WVObjectSize size="10" />
-   <wvobject type="array" fp_name="/AppCombi_top_tb/uut/Thermometrique">
-      <obj_property name="ElementShortName">Thermometrique[11:0]</obj_property>
-      <obj_property name="ObjectShortName">Thermometrique[11:0]</obj_property>
-   </wvobject>
-   <wvobject type="array" fp_name="/AppCombi_top_tb/uut/s_ADCbin">
-      <obj_property name="ElementShortName">s_ADCbin[3:0]</obj_property>
-      <obj_property name="ObjectShortName">s_ADCbin[3:0]</obj_property>
-   </wvobject>
-   <wvobject type="logic" fp_name="/AppCombi_top_tb/uut/s_erreur">
-      <obj_property name="ElementShortName">s_erreur</obj_property>
-      <obj_property name="ObjectShortName">s_erreur</obj_property>
-   </wvobject>
-   <wvobject type="array" fp_name="/AppCombi_top_tb/uut/fact2_3/div_m1">
-      <obj_property name="ElementShortName">div_m1[11:0]</obj_property>
-      <obj_property name="ObjectShortName">div_m1[11:0]</obj_property>
+   <WVObjectSize size="3" />
+   <wvobject type="array" fp_name="/AppCombi_top_tb/uut/h_parite/ADCbin">
+      <obj_property name="ElementShortName">ADCbin[3:0]</obj_property>
+      <obj_property name="ObjectShortName">ADCbin[3:0]</obj_property>
       <obj_property name="isExpanded"></obj_property>
    </wvobject>
-   <wvobject type="array" fp_name="/AppCombi_top_tb/uut/fact2_3/div_m3">
-      <obj_property name="ElementShortName">div_m3[11:0]</obj_property>
-      <obj_property name="ObjectShortName">div_m3[11:0]</obj_property>
-      <obj_property name="isExpanded"></obj_property>
+   <wvobject type="logic" fp_name="/AppCombi_top_tb/uut/h_parite/S1">
+      <obj_property name="ElementShortName">S1</obj_property>
+      <obj_property name="ObjectShortName">S1</obj_property>
+      <obj_property name="CustomSignalColor">#00FFFF</obj_property>
+      <obj_property name="UseCustomSignalColor">true</obj_property>
    </wvobject>
-   <wvobject type="array" fp_name="/AppCombi_top_tb/uut/fact2_3/div_m5">
-      <obj_property name="ElementShortName">div_m5[11:0]</obj_property>
-      <obj_property name="ObjectShortName">div_m5[11:0]</obj_property>
-      <obj_property name="isExpanded"></obj_property>
-   </wvobject>
-   <wvobject type="array" fp_name="/AppCombi_top_tb/uut/fact2_3/div_m7">
-      <obj_property name="ElementShortName">div_m7[11:0]</obj_property>
-      <obj_property name="ObjectShortName">div_m7[11:0]</obj_property>
-      <obj_property name="isExpanded"></obj_property>
-   </wvobject>
-   <wvobject type="array" fp_name="/AppCombi_top_tb/uut/s_A2_3">
-      <obj_property name="ElementShortName">s_A2_3[2:0]</obj_property>
-      <obj_property name="ObjectShortName">s_A2_3[2:0]</obj_property>
-      <obj_property name="isExpanded"></obj_property>
-   </wvobject>
-   <wvobject type="array" fp_name="/AppCombi_top_tb/uut/fact2_3/x5">
-      <obj_property name="ElementShortName">x5[3:0]</obj_property>
-      <obj_property name="ObjectShortName">x5[3:0]</obj_property>
-      <obj_property name="isExpanded"></obj_property>
-   </wvobject>
-   <wvobject type="array" fp_name="/AppCombi_top_tb/uut/s_decoded3_8">
-      <obj_property name="ElementShortName">s_decoded3_8[7:0]</obj_property>
-      <obj_property name="ObjectShortName">s_decoded3_8[7:0]</obj_property>
-      <obj_property name="isExpanded"></obj_property>
+   <wvobject type="logic" fp_name="/AppCombi_top_tb/uut/h_parite/Parite">
+      <obj_property name="ElementShortName">Parite</obj_property>
+      <obj_property name="ObjectShortName">Parite</obj_property>
+      <obj_property name="CustomSignalColor">#FF00FF</obj_property>
+      <obj_property name="UseCustomSignalColor">true</obj_property>
    </wvobject>
 </wave_config>

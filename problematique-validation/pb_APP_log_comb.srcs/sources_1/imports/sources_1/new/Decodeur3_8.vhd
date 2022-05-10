@@ -37,15 +37,34 @@ entity Decodeur3_8 is
 end Decodeur3_8;
 
 architecture Behavioral of Decodeur3_8 is
-
-begin			
-    out3_8 <= "10000000" when A2_3 = "111" else
-              "01000000" when A2_3 = "110" else
-              "00100000" when A2_3 = "101" else
-              "00010000" when A2_3 = "100" else
-              "00001000" when A2_3 = "011" else
-              "00000100" when A2_3 = "010" else
-              "00000010" when A2_3 = "001" else
-              "00000001" when A2_3 = "000" else
+    signal s_A2_3 : STD_LOGIC_VECTOR (2 downto 0);
+    CONSTANT PERIOD    : time := 10 ns;
+begin		
+    s_A2_3 <= A2_3;	
+    out3_8 <= "10000000" when s_A2_3 = "111" else
+              "01000000" when s_A2_3 = "110" else
+              "00100000" when s_A2_3 = "101" else
+              "00010000" when s_A2_3 = "100" else
+              "00001000" when s_A2_3 = "011" else
+              "00000100" when s_A2_3 = "010" else
+              "00000010" when s_A2_3 = "001" else
+              "00000001" when s_A2_3 = "000" else
               "00000000";
+              
+             
+    -- *** Test Bench - User Defined Section ***
+-- l'int\E9r\EAt de cette structure de test bench est que l'on recopie la table de v\E9rit\E9.
+--   tb : PROCESS
+--   BEGIN         
+--       --> Cette partie est un exemple pour simuler le thermom\E9trique
+--       wait for PERIOD; s_A2_3 <="000"; --> Code normal
+--         wait for PERIOD; s_A2_3 <="001";
+--         wait for PERIOD; s_A2_3 <="010";
+--         wait for PERIOD; s_A2_3 <="011";
+--         wait for PERIOD; s_A2_3 <="100";
+--         wait for PERIOD; s_A2_3 <="101";
+--         wait for PERIOD; s_A2_3 <="110";
+--         wait for PERIOD; s_A2_3 <="111";
+--         WAIT; -- will wait forever
+--   END PROCESS;  
 end Behavioral;

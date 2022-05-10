@@ -49,7 +49,7 @@
     <Option Name="DSABoardId" Val="zybo-z7-10"/>
     <Option Name="DSADescription" Val="Vivado generated DSA"/>
     <Option Name="DSAEmuDir" Val="emu"/>
-    <Option Name="WTXSimLaunchSim" Val="230"/>
+    <Option Name="WTXSimLaunchSim" Val="295"/>
     <Option Name="WTModelSimLaunchSim" Val="0"/>
     <Option Name="WTQuestaLaunchSim" Val="0"/>
     <Option Name="WTIesLaunchSim" Val="0"/>
@@ -134,22 +134,6 @@
           <Attr Name="UsedIn" Val="simulation"/>
         </FileInfo>
       </File>
-      <File Path="$PSRCDIR/sources_1/imports/sources_1/new/Count12Bits.vhd">
-        <FileInfo>
-          <Attr Name="ImportPath" Val="$PPRDIR/../problematique-vivado/pb_APP_log_comb.srcs/sources_1/new/Count12Bits.vhd"/>
-          <Attr Name="ImportTime" Val="1652113865"/>
-          <Attr Name="UsedIn" Val="synthesis"/>
-          <Attr Name="UsedIn" Val="simulation"/>
-        </FileInfo>
-      </File>
-      <File Path="$PSRCDIR/sources_1/imports/sources_1/new/Count4Bits_1Bits.vhd">
-        <FileInfo>
-          <Attr Name="ImportPath" Val="$PPRDIR/../problematique-vivado/pb_APP_log_comb.srcs/sources_1/new/Count4Bits_1Bits.vhd"/>
-          <Attr Name="ImportTime" Val="1652113865"/>
-          <Attr Name="UsedIn" Val="synthesis"/>
-          <Attr Name="UsedIn" Val="simulation"/>
-        </FileInfo>
-      </File>
       <File Path="$PSRCDIR/sources_1/imports/sources_1/new/Decodeur3_8.vhd">
         <FileInfo>
           <Attr Name="ImportPath" Val="$PPRDIR/../problematique-vivado/pb_APP_log_comb.srcs/sources_1/new/Decodeur3_8.vhd"/>
@@ -160,8 +144,6 @@
       </File>
       <File Path="$PSRCDIR/sources_1/imports/sources_1/new/Fct2_3.vhd">
         <FileInfo>
-          <Attr Name="ImportPath" Val="$PPRDIR/../problematique-vivado/pb_APP_log_comb.srcs/sources_1/new/Fct2_3.vhd"/>
-          <Attr Name="ImportTime" Val="1652113865"/>
           <Attr Name="UsedIn" Val="synthesis"/>
           <Attr Name="UsedIn" Val="simulation"/>
         </FileInfo>
@@ -177,22 +159,6 @@
       <File Path="$PSRCDIR/sources_1/imports/sources_1/new/Parite.vhd">
         <FileInfo>
           <Attr Name="ImportPath" Val="$PPRDIR/../problematique-vivado/pb_APP_log_comb.srcs/sources_1/new/Parite.vhd"/>
-          <Attr Name="ImportTime" Val="1652113865"/>
-          <Attr Name="UsedIn" Val="synthesis"/>
-          <Attr Name="UsedIn" Val="simulation"/>
-        </FileInfo>
-      </File>
-      <File Path="$PSRCDIR/sources_1/imports/sources_1/new/Thermo2Bin.vhd">
-        <FileInfo>
-          <Attr Name="ImportPath" Val="$PPRDIR/../problematique-vivado/pb_APP_log_comb.srcs/sources_1/new/Thermo2Bin.vhd"/>
-          <Attr Name="ImportTime" Val="1652113865"/>
-          <Attr Name="UsedIn" Val="synthesis"/>
-          <Attr Name="UsedIn" Val="simulation"/>
-        </FileInfo>
-      </File>
-      <File Path="$PSRCDIR/sources_1/imports/sources_1/new/Thermo2Check_4bits.vhd">
-        <FileInfo>
-          <Attr Name="ImportPath" Val="$PPRDIR/../problematique-vivado/pb_APP_log_comb.srcs/sources_1/new/Thermo2Check_4bits.vhd"/>
           <Attr Name="ImportTime" Val="1652113865"/>
           <Attr Name="UsedIn" Val="synthesis"/>
           <Attr Name="UsedIn" Val="simulation"/>
@@ -238,6 +204,42 @@
           <Attr Name="UsedIn" Val="simulation"/>
         </FileInfo>
       </File>
+      <File Path="$PSRCDIR/sources_1/imports/sources_1/new/Count12Bits.vhd">
+        <FileInfo>
+          <Attr Name="AutoDisabled" Val="1"/>
+          <Attr Name="ImportPath" Val="$PPRDIR/../problematique-vivado/pb_APP_log_comb.srcs/sources_1/new/Count12Bits.vhd"/>
+          <Attr Name="ImportTime" Val="1652113865"/>
+          <Attr Name="UsedIn" Val="synthesis"/>
+          <Attr Name="UsedIn" Val="simulation"/>
+        </FileInfo>
+      </File>
+      <File Path="$PSRCDIR/sources_1/imports/sources_1/new/Count4Bits_1Bits.vhd">
+        <FileInfo>
+          <Attr Name="AutoDisabled" Val="1"/>
+          <Attr Name="ImportPath" Val="$PPRDIR/../problematique-vivado/pb_APP_log_comb.srcs/sources_1/new/Count4Bits_1Bits.vhd"/>
+          <Attr Name="ImportTime" Val="1652113865"/>
+          <Attr Name="UsedIn" Val="synthesis"/>
+          <Attr Name="UsedIn" Val="simulation"/>
+        </FileInfo>
+      </File>
+      <File Path="$PSRCDIR/sources_1/imports/sources_1/new/Thermo2Bin.vhd">
+        <FileInfo>
+          <Attr Name="AutoDisabled" Val="1"/>
+          <Attr Name="ImportPath" Val="$PPRDIR/../problematique-vivado/pb_APP_log_comb.srcs/sources_1/new/Thermo2Bin.vhd"/>
+          <Attr Name="ImportTime" Val="1652113865"/>
+          <Attr Name="UsedIn" Val="synthesis"/>
+          <Attr Name="UsedIn" Val="simulation"/>
+        </FileInfo>
+      </File>
+      <File Path="$PSRCDIR/sources_1/imports/sources_1/new/Thermo2Check_4bits.vhd">
+        <FileInfo>
+          <Attr Name="AutoDisabled" Val="1"/>
+          <Attr Name="ImportPath" Val="$PPRDIR/../problematique-vivado/pb_APP_log_comb.srcs/sources_1/new/Thermo2Check_4bits.vhd"/>
+          <Attr Name="ImportTime" Val="1652113865"/>
+          <Attr Name="UsedIn" Val="synthesis"/>
+          <Attr Name="UsedIn" Val="simulation"/>
+        </FileInfo>
+      </File>
       <File Path="$PSRCDIR/sources_1/new/testS.vhd">
         <FileInfo>
           <Attr Name="AutoDisabled" Val="1"/>
@@ -250,6 +252,20 @@
           <Attr Name="AutoDisabled" Val="1"/>
           <Attr Name="ImportPath" Val="$PPRDIR/../problematique-vivado/pb_APP_log_comb.srcs/sources_1/new/ThermoChecker2Bit.vhd"/>
           <Attr Name="ImportTime" Val="1652113865"/>
+          <Attr Name="UsedIn" Val="synthesis"/>
+          <Attr Name="UsedIn" Val="simulation"/>
+        </FileInfo>
+      </File>
+      <File Path="$PSRCDIR/sources_1/new/testFct2_3.vhd">
+        <FileInfo>
+          <Attr Name="AutoDisabled" Val="1"/>
+          <Attr Name="UsedIn" Val="synthesis"/>
+          <Attr Name="UsedIn" Val="simulation"/>
+        </FileInfo>
+      </File>
+      <File Path="$PSRCDIR/sources_1/new/testDecode3_8.vhd">
+        <FileInfo>
+          <Attr Name="AutoDisabled" Val="1"/>
           <Attr Name="UsedIn" Val="synthesis"/>
           <Attr Name="UsedIn" Val="simulation"/>
         </FileInfo>
@@ -276,6 +292,14 @@
     </FileSet>
     <FileSet Name="sim_1" Type="SimulationSrcs" RelSrcDir="$PSRCDIR/sim_1" RelGenDir="$PGENDIR/sim_1">
       <Filter Type="Srcs"/>
+      <File Path="$PSRCDIR/sources_1/imports/sources_1/new/Fct2_3.vhd">
+        <FileInfo>
+          <Attr Name="ImportPath" Val="$PPRDIR/../problematique-vivado/pb_APP_log_comb.srcs/sources_1/new/Fct2_3.vhd"/>
+          <Attr Name="ImportTime" Val="1652113865"/>
+          <Attr Name="UsedIn" Val="synthesis"/>
+          <Attr Name="UsedIn" Val="simulation"/>
+        </FileInfo>
+      </File>
       <File Path="$PSRCDIR/sim_1/imports/verif/AppCombi_top_tb.vhd">
         <FileInfo SFType="VHDL2008">
           <Attr Name="ImportPath" Val="$PPRDIR/../verif/AppCombi_top_tb.vhd"/>

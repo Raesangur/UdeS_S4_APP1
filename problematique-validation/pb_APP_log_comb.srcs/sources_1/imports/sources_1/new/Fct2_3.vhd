@@ -49,26 +49,28 @@ architecture Behavioral of Fct2_3 is
                x : out STD_LOGIC_VECTOR (3 downto 0);
                c : out STD_LOGIC);
     end component;
+    signal s_ADCbin :  STD_LOGIC_VECTOR (3 downto 0);
+    CONSTANT PERIOD    : time := 10 ns;
 begin
-    div_m1(10) <= ADCbin(3);
-    div_m1(9) <= ADCbin(2);
-    div_m1(8) <= ADCbin(1);
-    div_m1(7) <= ADCbin(0);
+    s_ADCbin <= ADCbin;
     
-    div_m3(8) <= ADCbin(3);
-    div_m3(7) <= ADCbin(2);
-    div_m3(6) <= ADCbin(1);
-    div_m3(5) <= ADCbin(0);
+    div_m1(10) <= s_ADCbin(3);
+    div_m1(9) <= s_ADCbin(2);
+    div_m1(8) <= s_ADCbin(1);
+    div_m1(7) <= s_ADCbin(0);
     
-    div_m5(6) <= ADCbin(3);
-    div_m5(5) <= ADCbin(2);
-    div_m5(4) <= ADCbin(1);
-    div_m5(3) <= ADCbin(0);    
+    div_m3(8) <= s_ADCbin(3);
+    div_m3(7) <= s_ADCbin(2);
+    div_m3(6) <= s_ADCbin(1);
+    div_m3(5) <= s_ADCbin(0);
     
-    div_m7(4) <= ADCbin(3);
-    div_m7(3) <= ADCbin(2);
-    --div_m7(2) <= ADCbin(1); -- ne sera pas pris en consideration
-    --div_m7(1) <= ADCbin(0);
+    div_m5(6) <= s_ADCbin(3);
+    div_m5(5) <= s_ADCbin(2);
+    div_m5(4) <= s_ADCbin(1);
+    div_m5(3) <= s_ADCbin(0);    
+    
+    div_m7(4) <= s_ADCbin(3);
+    div_m7(3) <= s_ADCbin(2);
     
     h1 : Add4Bits port map (
         a => div_m7(3 downto 0),
@@ -111,6 +113,31 @@ begin
     );
     
     A2_3 <= x5(2 downto 0);
+    
+     
+    -- *** Test Bench - User Defined Section ***
+-- l'int\E9r\EAt de cette structure de test bench est que l'on recopie la table de v\E9rit\E9.
+--   tb : PROCESS
+--   BEGIN         
+--       --> Cette partie est un exemple pour simuler le thermom\E9trique
+--       wait for PERIOD; s_ADCbin <="0000"; --> Code normal
+--         wait for PERIOD; s_ADCbin <="0001";
+--         wait for PERIOD; s_ADCbin <="0010";
+--         wait for PERIOD; s_ADCbin <="0011";
+--         wait for PERIOD; s_ADCbin <="0100";
+--         wait for PERIOD; s_ADCbin <="0101";
+--         wait for PERIOD; s_ADCbin <="0110";
+--         wait for PERIOD; s_ADCbin <="0111";
+--         wait for PERIOD; s_ADCbin <="1000";
+--         wait for PERIOD; s_ADCbin <="1001";
+--         wait for PERIOD; s_ADCbin <="1010";
+--         wait for PERIOD; s_ADCbin <="1011";
+--         wait for PERIOD; s_ADCbin <="1100";
+--         wait for PERIOD; s_ADCbin <="1101";
+--         wait for PERIOD; s_ADCbin <="1110";
+--         wait for PERIOD; s_ADCbin <="1111";
+--         WAIT; -- will wait forever
+--   END PROCESS;
     
     -- addition 
 end Behavioral;

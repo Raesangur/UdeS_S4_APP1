@@ -38,8 +38,8 @@ entity Bouton2Bin is
            Code_signe : in STD_LOGIC_VECTOR (3 downto 0);
            Unite_s : in STD_LOGIC_VECTOR (3 downto 0);
            erreur : in STD_LOGIC;
-           BTN0 : in STD_LOGIC;
-           BTN1 : in STD_LOGIC;
+           BTN0 : in STD_LOGIC := '0';
+           BTN1 : in STD_LOGIC := '0';
            S2 : in STD_LOGIC;
            DAFF0 : out STD_LOGIC_VECTOR (3 downto 0);
            DAFF1 : out STD_LOGIC_VECTOR (3 downto 0));
@@ -49,24 +49,26 @@ architecture Behavioral of Bouton2Bin is
     CONSTANT CODE_ERREUR_AFF0    : STD_LOGIC_VECTOR(3 downto 0) := "1110";   -- E
     CONSTANT CODE_ERREUR_AFF1    : STD_LOGIC_VECTOR(3 downto 0) := "1111";   -- r
 begin
-    process(erreur, BTN0, BTN1, S2)
-    begin
-        if (S2 = '1' OR (BTN0 = '1' and BTN1 = '1') OR erreur = '1') then
-            DAFF0 <= CODE_ERREUR_AFF0;
-            DAFF1 <= CODE_ERREUR_AFF1;
+    DAFF0 <= Dizaines;
+    DAFF1 <= Unites_ns;
+--    process(erreur, BTN0, BTN1, S2)
+--    begin
+--        if (S2 = '1' OR (BTN0 = '1' and BTN1 = '1') OR erreur = '1') then
+--            DAFF0 <= CODE_ERREUR_AFF0;
+--            DAFF1 <= CODE_ERREUR_AFF1;
+----                DAFF0 <= Dizaines;
+----                DAFF1 <= Unites_ns;
+--        else
+--            if (BTN0 = '0' AND BTN1 = '0') then
 --                DAFF0 <= Dizaines;
 --                DAFF1 <= Unites_ns;
-        else
-            if (BTN0 = '0' AND BTN1 = '0') then
-                DAFF0 <= Dizaines;
-                DAFF1 <= Unites_ns;
-            elsif (BTN0 = '1') then
-                DAFF0 <= "0000";
-                DAFF1 <= ADCbin;
-            else
-                DAFF0 <= Code_signe;
-                DAFF1 <= Unite_s;
-            end if;
-        end if;
-    end process;
+--            elsif (BTN0 = '1') then
+--                DAFF0 <= "0000";
+--                DAFF1 <= ADCbin;
+--            else
+--                DAFF0 <= Code_signe;
+--                DAFF1 <= Unite_s;
+--            end if;
+--        end if;
+--    end process;
 end Behavioral;
