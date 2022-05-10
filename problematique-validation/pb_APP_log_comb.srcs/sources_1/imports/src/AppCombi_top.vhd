@@ -161,10 +161,11 @@ begin
         
     termo2Bin : Thermo2Bin
         port map (
-            ADCth => Thermometrique,
+            ADCth => i_ADC_th, --Thermometrique,
             ADCbin => s_ADCbin,
             erreur => s_erreur
         );
+        
         
     toBCD : Bin2DualBCD
     port map (
@@ -198,8 +199,9 @@ begin
     
     decode3_8 : Decodeur3_8 port map (
         A2_3 => s_A2_3,
-        out3_8 => o_pmodled
+        out3_8 => s_decoded3_8
     );    
+    o_pmodled <= s_decoded3_8;
     
     h_parite : Parite port map (
         ADCbin => s_ADCbin,
@@ -209,7 +211,7 @@ begin
     o_DEL2 <= s_parite;
     o_led(0) <= s_parite;
     o_led(1) <= i_S1;
-    o_led(2) <= i_S2;
+    o_led(2) <= i_S2;   
     
     -- *** Test Bench - User Defined Section ***
 -- l'int\E9r\EAt de cette structure de test bench est que l'on recopie la table de v\E9rit\E9.
@@ -217,22 +219,44 @@ begin
    tb : PROCESS
    BEGIN         
        --> Cette partie est un exemple pour simuler le thermom\E9trique
-         wait for PERIOD; Thermometrique <="000000000000"; --> Code normal
+       wait for PERIOD; Thermometrique <="000000000000"; --> Code normal
          wait for PERIOD; Thermometrique <="000000000001";
          wait for PERIOD; Thermometrique <="000000000011";
          wait for PERIOD; Thermometrique <="000000000111";
          wait for PERIOD; Thermometrique <="000000001111";
          wait for PERIOD; Thermometrique <="000000011111";
          wait for PERIOD; Thermometrique <="000000111111";
+         wait for PERIOD; Thermometrique <="000001111111";
+         wait for PERIOD; Thermometrique <="000011111111";
+         wait for PERIOD; Thermometrique <="000111111111";
+         wait for PERIOD; Thermometrique <="001111111111";
+         wait for PERIOD; Thermometrique <="011111111111";
+         wait for PERIOD; Thermometrique <="111111111111";
+         -- plan de test
+         wait for PERIOD; Thermometrique <="000000000000"; --> Code normal
+         wait for PERIOD; Thermometrique <="000000000001";
+         wait for PERIOD; Thermometrique <="000000000011";
+         wait for PERIOD; Thermometrique <="000000000010";
+         wait for PERIOD; Thermometrique <="000000000111";
+         wait for PERIOD; Thermometrique <="000000000100";
+         wait for PERIOD; Thermometrique <="000000001111";
+         wait for PERIOD; Thermometrique <="010000001111";
+         wait for PERIOD; Thermometrique <="000000011111";
+         wait for PERIOD; Thermometrique <="000000010001";
+         wait for PERIOD; Thermometrique <="000000111111";
+         wait for PERIOD; Thermometrique <="000000101010";
+         wait for PERIOD; Thermometrique <="000001111X11";
          wait for PERIOD; Thermometrique <="000001110111";
          wait for PERIOD; Thermometrique <="000011111111";
          wait for PERIOD; Thermometrique <="000111111111";
          wait for PERIOD; Thermometrique <="001111111111";
          wait for PERIOD; Thermometrique <="011111111111";
          wait for PERIOD; Thermometrique <="111111111111";
-         wait for PERIOD; Thermometrique <="000000000010";  --> Code avec erreur
+         wait for PERIOD; Thermometrique <="000000010000";  --> Code avec erreur
          wait for PERIOD; Thermometrique <="000000101111";
+         wait for PERIOD; Thermometrique <="111100000000";
          wait for PERIOD; Thermometrique <="111100001111";
+         wait for PERIOD; Thermometrique <="000011110000";
          WAIT; -- will wait forever
    END PROCESS;
 end BEHAVIORAL;
