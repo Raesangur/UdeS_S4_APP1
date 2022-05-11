@@ -46,14 +46,9 @@ begin
         (toCount(2) and toCount(1) and not toCount(0)) or
         (toCount(0) and (toCount(3) XOR toCount(2))) or
         (toCount(3) and (toCount(2) XOR toCount(1)));        
-    nBits(0) <=
-        (not toCount(3) and not toCount(2) and not toCount(1) and toCount(0)) or
-        (not toCount(3) and not toCount(2) and toCount(1) and not toCount(0)) or
-        (not toCount(3) and toCount(2) and not toCount(1) and not toCount(0)) or
-        (not toCount(3) and toCount(2) and toCount(1) and toCount(0)) or
-        (toCount(3) and not toCount(2) and not toCount(1) and not toCount(0)) or
-        (toCount(3) and not toCount(2) and toCount(1) and toCount(0)) or
-        (toCount(3) and toCount(2) and not toCount(1) and toCount(0)) or
-        (toCount(3) and toCount(2) and toCount(1) and not toCount(0));
-
+    nBits(0) <=        
+        (not toCount(3) and not toCount(1) and (toCount(2) XOR toCount(0))) or
+        (not toCount(3) and toCount(1) and (toCount(2) XNOR toCount(0))) or
+        (toCount(3) and not toCount(1) and (toCount(2) XNOR toCount(0))) or
+        (toCount(3) and toCount(1) and (toCount(2) XOR toCount(0)));    
 end Behavioral;

@@ -88,6 +88,7 @@ begin
         bits(3)             => '0',
         erreur => e4
     );
+    erreur <= e1 or e2 or e3 or e4;
     
     -- compter les bits vers et output le nombre en binary
     
@@ -95,5 +96,4 @@ begin
         bits => ADCth,
         bits4 => ADCbin
     );
-    erreur <= e1 or e2 or e3 or e4;
 end Behavioral;
