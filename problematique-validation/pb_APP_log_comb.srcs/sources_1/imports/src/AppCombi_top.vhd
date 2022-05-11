@@ -160,12 +160,12 @@ begin
             o_AFFSSD       => o_SSD   -- sorties directement adaptees au connecteur PmodSSD
         );
         
---    termo2Bin : Thermo2Bin
---        port map (
---            ADCth => Thermometrique, -- i_ADC_th
---            ADCbin => s_ADCbin,
---            erreur => s_erreur
---        );
+    termo2Bin : Thermo2Bin
+        port map (
+            ADCth => i_ADC_th,
+            ADCbin => s_ADCbin,
+            erreur => s_erreur
+        );
                 
     toBCD : Bin2DualBCD
     port map (
@@ -214,43 +214,10 @@ begin
     
     -- *** Test Bench - User Defined Section ***
 -- l'int\E9r\EAt de cette structure de test bench est que l'on recopie la table de v\E9rit\E9.
-   tb : PROCESS
-   BEGIN         
+--   tb : PROCESS
+--   BEGIN         
        --> Cette partie est un exemple pour simuler le thermom\E9trique
-       wait for PERIOD; Thermometrique <="000000000000"; --> Code normal
-       wait for PERIOD; s_ADCbin <="0000"; --> Code normal
-         wait for PERIOD; s_ADCbin <="0001";
-         wait for PERIOD; s_ADCbin <="0010";
-         wait for PERIOD; s_ADCbin <="0011";
-         wait for PERIOD; s_ADCbin <="0100";
-         wait for PERIOD; s_ADCbin <="0101";
-         wait for PERIOD; s_ADCbin <="0110";
-         wait for PERIOD; s_ADCbin <="0111";
-         wait for PERIOD; s_ADCbin <="1000";
-         wait for PERIOD; s_ADCbin <="1001";
-         wait for PERIOD; s_ADCbin <="1010";
-         wait for PERIOD; s_ADCbin <="1011";
-         wait for PERIOD; s_ADCbin <="1100";
-         wait for PERIOD; s_ADCbin <="1101";
-         wait for PERIOD; s_ADCbin <="1110";
-         wait for PERIOD; s_ADCbin <="1111";
-         wait for PERIOD; s_ADCbin <="1111";
-       wait for PERIOD; s_i_S1 <='1'; --> Code normal
-         wait for PERIOD; s_ADCbin <="0001";
-         wait for PERIOD; s_ADCbin <="0010";
-         wait for PERIOD; s_ADCbin <="0011";
-         wait for PERIOD; s_ADCbin <="0100";
-         wait for PERIOD; s_ADCbin <="0101";
-         wait for PERIOD; s_ADCbin <="0110";
-         wait for PERIOD; s_ADCbin <="0111";
-         wait for PERIOD; s_ADCbin <="1000";
-         wait for PERIOD; s_ADCbin <="1001";
-         wait for PERIOD; s_ADCbin <="1010";
-         wait for PERIOD; s_ADCbin <="1011";
-         wait for PERIOD; s_ADCbin <="1100";
-         wait for PERIOD; s_ADCbin <="1101";
-         wait for PERIOD; s_ADCbin <="1110";
-         wait for PERIOD; s_ADCbin <="1111";
+--       wait for PERIOD; Thermometrique <="000000000000"; --> Code normal
 --         wait for PERIOD; Thermometrique <="000000000001";
 --         wait for PERIOD; Thermometrique <="000000000011";
 --         wait for PERIOD; Thermometrique <="000000000111";
@@ -276,6 +243,6 @@ begin
 --         wait for PERIOD; Thermometrique <="111111111101";
 --         wait for PERIOD; Thermometrique <="111111111110";
         
-         WAIT; -- will wait forever
-   END PROCESS;
+--         WAIT; -- will wait forever
+--   END PROCESS;
 end BEHAVIORAL;
