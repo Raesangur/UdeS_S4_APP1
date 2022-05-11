@@ -38,109 +38,110 @@ entity Parite is
 end Parite;
 
 architecture Behavioral of Parite is
-
+    signal s_parite : std_logic := '0';
 begin
+    Parite <= s_parite; 
     process (S1, ADCbin)
     begin
         case (ADCbin) is
             when "0000" =>
                 if S1 = '0' then
-                    Parite <= '0';
+                    s_parite <= '0';
                 else
-                    Parite <= '1';
+                    s_parite <= '1';
                 end if;
             when "0001" =>
                 if S1 = '0' then
-                    Parite <= '1';
+                    s_parite <= '1';
                 else
-                    Parite <= '0';
+                    s_parite <= '0';
                 end if;
             when "0010" =>
                 if S1 = '0' then
-                    Parite <= '1';
+                    s_parite <= '1';
                 else
-                    Parite <= '0';
+                    s_parite <= '0';
                 end if;
             when "0011" =>
                 if S1 = '0' then
-                    Parite <= '0';
+                    s_parite <= '0';
                 else
-                    Parite <= '1';
+                    s_parite <= '1';
                 end if;
             when "0100" =>
                 if S1 = '0' then
-                    Parite <= '1';
+                    s_parite <= '1';
                 else
-                    Parite <= '0';
+                    s_parite <= '0';
                 end if;
             when "0101" =>
                 if S1 = '0' then
-                    Parite <= '0';
+                    s_parite <= '0';
                 else
-                    Parite <= '1';
+                    s_parite <= '1';
                 end if;
             when "0110" =>
                 if S1 = '0' then
-                    Parite <= '0';
+                    s_parite <= '0';
                 else
-                    Parite <= '1';
+                    s_parite <= '1';
                 end if;
             when "0111" =>
                 if S1 = '0' then
-                    Parite <= '1';
+                    s_parite <= '1';
                 else
-                    Parite <= '0';
+                    s_parite <= '0';
                 end if;
             when "1000" =>
                 if S1 = '0' then
-                    Parite <= '1';
+                    s_parite <= '1';
                 else
-                    Parite <= '0';
+                    s_parite <= '0';
                 end if;
             when "1001" =>
                 if S1 = '0' then
-                    Parite <= '0';
+                    s_parite <= '0';
                 else
-                    Parite <= '1';
+                    s_parite <= '1';
                 end if;
             when "1010" =>
                 if S1 = '0' then
-                    Parite <= '0';
+                    s_parite <= '0';
                 else
-                    Parite <= '1';
+                    s_parite <= '1';
                 end if;
             when "1011" =>
                 if S1 = '0' then
-                    Parite <= '1';
+                    s_parite <= '1';
                 else
-                    Parite <= '0';
+                    s_parite <= '0';
                 end if;
             when "1100" =>
                 if S1 = '0' then
-                    Parite <= '0';
+                    s_parite <= '0';
                 else
-                    Parite <= '1';
+                    s_parite <= '1';
                 end if;
             when "1101" =>
                 if S1 = '0' then
-                    Parite <= '1';
+                    s_parite <= '1';
                 else
-                    Parite <= '0';
+                    s_parite <= '0';
                 end if;
             when "1110" =>
                 if S1 = '0' then
-                    Parite <= '1';
+                    s_parite <= '1';
                 else
-                    Parite <= '0';
+                    s_parite <= '0';
                 end if;
             when "1111" =>
                 if S1 = '0' then
-                    Parite <= '0';
+                    s_parite <= '0';
                 else
-                    Parite <= '1';
+                    s_parite <= '1';
                 end if;
             when others =>
-                Parite <= '0';
+                s_parite <= '0';
         end case;
     end process;
 end Behavioral;

@@ -139,7 +139,6 @@ architecture BEHAVIORAL of AppCombi_top is
    );
    end component;
    signal s_parite : std_logic;
-   signal s_i_S1 : std_logic := '0';
 begin
 
     inst_synch : synchro_module_v2
@@ -204,12 +203,12 @@ begin
     
     h_parite : Parite port map (
         ADCbin => s_ADCbin,
-        S1 => s_i_S1,
+        S1 => i_S1,
         Parite => s_parite
     );    
-    o_DEL2 <= s_parite;
+    o_DEL2 <= not s_parite; -- doit être inversé pour allumer la del
     o_led(0) <= s_parite;
-    o_led(1) <= i_S1;
+    o_led(1) <= i_S1; -- mis pour débugger
     o_led(2) <= i_S2;   
     
     -- *** Test Bench - User Defined Section ***
